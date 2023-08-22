@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demmo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+      }
+
+
+      .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 2rem;
+      }
+
+      .goal-form {
+          border: 1px solid #ddd;
+          padding: 1.5rem;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+          font-weight: bold;
+          display: block;
+          margin-bottom: 0.5rem;
+      }
+
+      select, input, textarea {
+          width: 100%;
+          padding: 0.5rem;
+          margin-bottom: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+
+      button {
+          background-color: #333;
+          color: white;
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+
+      button:hover {
+          background-color: #555;
+      }
+      .validation-message {
+          color: red;
+          font-size: 16px;
+          margin-top: -10px;
+          margin-bottom: 10px;
+      }
+      #validation-message1 {
+          color: rgb(8, 216, 42);
+          font-size: 16px;
+          margin-top: -10px;
+          margin-bottom: 10px;
+      }
+      #validation-message2 {
+          color: rgb(221, 96, 13);
+          font-size: 16px;
+          margin-top: -10px;
+          margin-bottom: 10px;
+      }
+      #myModal{
+          display: none;
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 2rem;
+      }
+      .modal-content{
+          border: 1px solid #ddd;
+          padding: 1.5rem;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+  </style>
+</head>
+<body>
+
+
+    <!-- navigation bar -->
+    <div class="dsh" style="width: 100%; background-color: rgb(111, 172, 172); margin-bottom: 7px; font-family:Georgia, 'Times New Roman', Times, serif;align-items: end;"><center>FITNESS TRACKING DASHBOARD </center></div>
+
+ 
+
+    <nav class="navbar navbar-expand-lg bg-warning">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" style="font-size: 25px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: 700; ">  <i class="fa fa-bitcoin" style="font-size:36px"></i>Fit</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html" style="font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: 520;" >Home</a>
+            </li>
+            <li class="nav-item">
+
+              <a class="nav-link active" aria-current="page" href="about.html" style="font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: 520">About</a>
+
+            </li>
+
+            <li class="nav-item">
+
+              <a class="nav-link active" aria-current="page" href="future.html" style="font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: 520"> Set Future Goals</a>
+
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link active" aria-current="page" href="exercise.html" style="font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: 520"> Exercise</a>
+  
+              </li>
+
+            <li class="nav-item">
+
+              <a class="nav-link active" aria-current="page" href="progress.html" style="font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: 520"> Progress Chart</a>
+
+            </li>
+            <li class="nav-item">
+
+              <a class="nav-link active" aria-current="page" href="activity.html" style="font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: 520"> Activity Diagram</a>
+
+            </li>
+
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<br>
+
+<header>
+  <h3>Set Future Fitness Goals</h3>
+</header>
+
+
+<div class="container">
+  <div class="goal-form">
+      <h2>Define Your Goals</h2>
+      <label for="goal-category">Select Goal Category:</label>
+      <select id="goal-category">
+          <option value="weight-loss">Weight Loss</option>
+          <option value="muscle-gain">Muscle Gain</option>
+          <option value="endurance">Endurance Improvement</option>
+      </select>
+      <label for="goal-deadline">Set Goal Deadline:</label>
+      <input type="date" id="goal-deadline">
+      <label for="goal-description">Describe Your Goal:</label>
+      <textarea id="goal-description"></textarea>
+      <div class="validation-message" id="validation-message"></div>
+
+
+      <div class="validation-message" id="validation-message1"></div>
+
+      <div class="validation-message" id="validation-message2"></div>
+
+
+      <button id="submit-goal">Set Goal</button>
+      <button id="view-goal">View Goal</button>
+  </div>
+</div>
+
+
+<div id="myModal" >
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>View Goal Data</h2>
+      <p><strong>Goal Category:</strong> <span id="view-category"></span></p>
+      <p><strong>Goal Deadline:</strong> <span id="view-deadline"></span></p>
+      <p><strong>Goal Description:</strong> <span id="view-description"></span></p>
+
+      
+  </div>
+</div>
+
+
+
+  
+
+
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+
+<script>
+
+
+ function showCustomAlert(message) {
+    const customAlertContainer = document.getElementById("custom-alert");
+    customAlertContainer.innerHTML = `<p class="custom-alert-message">${message}</p>`;
+    customAlertContainer.style.display = "block";
+  }
+
+  
+   document.addEventListener("DOMContentLoaded", function () {
+            const submitButton = document.getElementById("submit-goal");
+            const viewButton = document.getElementById("view-goal");
+            const validationMessage = document.getElementById("validation-message");
+            const validationMessage1 = document.getElementById("validation-message1");
+            const validationMessage2 = document.getElementById("validation-message2");
+            const modal = document.getElementById("myModal");
+            const closeModal = document.querySelector(".close");
+
+            submitButton.addEventListener("click", function () {
+                const goalCategory = document.getElementById("goal-category").value;
+                const goalDeadline = document.getElementById("goal-deadline").value;
+                const goalDescription = document.getElementById("goal-description").value;
+
+                if (!goalCategory || !goalDeadline || !goalDescription) {
+                    validationMessage2.textContent = " ";
+                    validationMessage.textContent = "Please fill out all fields.";
+                   
+                } else {
+                    validationMessage.textContent = "";
+
+                    const newGoal = {
+                        category: goalCategory,
+                        deadline: goalDeadline,
+                        description: goalDescription
+                    };
+
+                    let storedGoals = JSON.parse(localStorage.getItem("goalData")) || [];
+                    storedGoals.push(newGoal);
+
+                    
+                    localStorage.setItem("goalData", JSON.stringify(storedGoals));
+
+                    // alert("Goal set successfully!");
+                    validationMessage2.textContent = " ";
+                    validationMessage1.textContent = "Goal set successfully! ";
+                    
+                }
+            });
+
+            viewButton.addEventListener("click", function () {
+                const savedGoalData = JSON.parse(localStorage.getItem("goalData"));
+
+                if (savedGoalData && savedGoalData.length > 0) {
+                    const goalContainer = document.querySelector(".modal-content");
+                    goalContainer.innerHTML = "";
+
+                    savedGoalData.forEach(function (goal, index) {
+                        const goalElement = document.createElement("div");
+                        goalElement.innerHTML = `
+                            <h2>Goal ${index + 1}</h2>
+                            <p><strong>Goal Category:</strong> ${goal.category}</p>
+                            <p><strong>Goal Deadline:</strong> ${goal.deadline}</p>
+                            <p><strong>Goal Description:</strong> ${goal.description}</p>
+                            <hr>
+                        `;
+                        goalContainer.appendChild(goalElement);
+                    });
+
+                    modal.style.display = "block";
+                } else {
+                    // alert("No saved goal data found.");
+                    
+                    validationMessage2.textContent = "No saved goal data found. ";
+                }
+            });
+
+            closeModal.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+</body>
+</html>

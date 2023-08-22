@@ -1,0 +1,268 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.dsh{
+    font-size: 30px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.summary,
+.activity-log {
+    display: none;
+}
+
+li {
+    list-style: none;
+}
+
+#carouselExampleSlidesOnly {
+    max-width: 660px !important;
+    max-height: 400px !important;
+    margin-top: 23px;
+}
+
+.carousel-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+
+/* Add the following CSS to your existing "style.css" file or in a <style> block */
+
+.carousel-container {
+    float: left;
+    width: 50%;
+    /* Adjust this value as needed */
+    margin-left: 66px;
+}
+
+.text-container {
+    float: right;
+    width: 30%;
+    /* Adjust this value as needed */
+    text-align: center;
+    padding: 30px;
+    margin-right: 70px;
+    margin-top: 44px;
+    font-weight: 1000;
+    color: rgb(4, 51, 63);
+}
+
+/* about section */
+.about-section {
+    background-color: #d0dae2;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #1b1b1b;
+}
+
+.about-section h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #0e0d0d;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.navbar {
+    position: sticky;
+    top: 0%;
+    z-index: 5;
+}
+
+.dsh {
+    position: sticky;
+    top: 0%;
+    z-index: 5;
+}
+
+.newdiv {
+    display: none;
+}
+
+#caloriesChart{
+    height: 400px;
+    width: 400px;
+}
+
+@media (min-width:240px) and (max-width:479px) {
+
+    .carousel-container {
+        float: left;
+        width: 70%;
+        /* Adjust this value as needed */
+        margin-left: 66px;
+    }
+    #carouselExampleSlidesOnly {
+        max-width: 600px !important;
+        max-height: 400px !important;
+        margin-top: 23px;
+        margin-bottom: 43px;
+    }
+
+    .text-container {
+        display: none;
+    }
+
+    .newdiv {
+        display: block;
+        height: 50%;
+        width: 80%;
+        margin-left: 60px;
+        color: rgb(4, 51, 63);
+    }
+   
+}
+
+@media (min-width:480px) and (max-width:767px) {
+    .carousel-container {
+        float: left;
+        width: 70%;
+        /* Adjust this value as needed */
+        margin-left: 66px;
+    }
+    #carouselExampleSlidesOnly {
+        max-width: 600px !important;
+        max-height: 400px !important;
+        margin-top: 23px;
+        margin-bottom: 43px;
+    }
+
+    .text-container {
+        display: none;
+    }
+
+    .newdiv {
+        display: block;
+        height: 50%;
+        width: 80%;
+        margin-left: 67px;
+        color: rgb(4, 51, 63);
+
+    }
+
+    #h1 {
+
+        font-size: 22px;
+    }
+
+    #h2 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+    .carousel-container {
+        /* float: left; */
+        width: 80%;
+        /* Adjust this value as needed */
+        margin-left: 95px;
+    }
+
+    .text-container {
+        display: none;
+    }
+
+    .newdiv {
+        display: block;
+        height: 50%;
+        width: 80%;
+        margin-left: 100px;
+        color: rgb(4, 51, 63);
+        margin-top: 44px;
+        align-content: center;
+        
+
+    }
+    #carouselExampleSlidesOnly {
+        max-width: 600px !important;
+        max-height: 400px !important;
+        margin-top: 23px;
+        margin-bottom: 43px;
+    }
+    
+    .carousel-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    #col1{
+        flex: none;
+    }
+           
+}
+
+
+@media (min-width:992px) and (max-width:1100px) {
+        
+    .text-container {
+        float: right;
+        width: 30%;
+        /* Adjust this value as needed */
+        text-align: center;
+        padding: 30px;
+        margin-right: 70px;
+        margin-top: 44px;
+        font-weight: 800;
+        color: rgb(4, 51, 63);
+    }
+    .text-container h2{
+        font-size: 22px;
+    }
+   
+
+    }
+    
+    @media (min-width:412px) and (max-width:896px) {
+
+        #row1{
+            margin-left: 10px;
+        }
+
+    }
+   
+
+    
+    @media (min-width:360px) and (max-width:667px) {
+
+        #caloriesChart{
+          height: 300px;
+          width: 300px;
+          margin-left: 44px;
+           
+        }
+        .dsh{
+            font-size: 28px;
+        }
+        #row1{
+            margin-left: -20px;
+        }
+        
+    }
